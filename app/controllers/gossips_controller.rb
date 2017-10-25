@@ -5,15 +5,24 @@ class GossipsController < ApplicationController
   end
 
   def new
-    @gossips = Gossip.new
+    @gossip = Gossip.new
   end
 
   def edit
-    @gossips = Gossip.find(params[:id])
+    @gossip = Gossip.find(params[:id])
   end
 
   def update
-    
+    @gossip = Gossip.find(params[:id])
+    #@gossip = Gossip.update(gossip_params)
+
+    if @gossip.update(gossip_params)
+
+    redirect_to root_path
+    else
+    render 'edit' 
+    end
+
   end
 
   def create
@@ -33,12 +42,15 @@ class GossipsController < ApplicationController
     @gossip = Gossip.find(params[:id])
   end
 
-  def delete
+  def destroy
      @gossip = Gossip.find(params[:id])
      @gossip.destroy
+     redirect_to root_path
   end
 
   def gossip_params
     params.permit(:content, :anonymous_author)
   end 
 end
+
+

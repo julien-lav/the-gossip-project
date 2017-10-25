@@ -2,7 +2,7 @@
 <p>Find me in app/views/gossips/edit.html.erb</p>
 
 
-<%= form_tag gossip_path(params[:id]), method: :put do %>
+<%= form_tag gossip_path, method: :put do %>
  
   <%= label_tag 'content', 'Content' %>
   <%= text_field_tag 'content' %>
@@ -10,5 +10,7 @@
   <%= label_tag 'anonymous_author', 'Author' %>
   <%= text_field_tag 'anonymous_author' %>
  
-  <%= submit_tag "Add a gossip !"%>
+  <%= submit_tag "Edit a gossip !"%>
 <% end %>
+
+
