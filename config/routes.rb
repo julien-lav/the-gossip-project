@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :gossips
-  resources :anonymous_author
 
   root 'gossips#index' 
 
