@@ -9,9 +9,11 @@ class GossipsController < ApplicationController
   end
 
   def edit
+    @gossips = Gossip.find(params[:id])
   end
 
   def update
+    
   end
 
   def create
@@ -32,6 +34,7 @@ class GossipsController < ApplicationController
   end
 
   def delete
+     @gossip = Gossip.find(params[:id])
      @gossip.destroy
   end
 

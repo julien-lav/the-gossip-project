@@ -1,2 +1,14 @@
-<h1>Gossips#edit</h1>
+<h1>Edit gossip</h1>
 <p>Find me in app/views/gossips/edit.html.erb</p>
+
+
+<%= form_tag gossip_path(params[:id]), method: :put do %>
+ 
+  <%= label_tag 'content', 'Content' %>
+  <%= text_field_tag 'content' %>
+ 
+  <%= label_tag 'anonymous_author', 'Author' %>
+  <%= text_field_tag 'anonymous_author' %>
+ 
+  <%= submit_tag "Add a gossip !"%>
+<% end %>
