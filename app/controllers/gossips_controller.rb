@@ -15,9 +15,9 @@ class GossipsController < ApplicationController
   end
 
   def create
-    @gossip = Gossip.new(gossip_params)
-    # @gossip.title = params[:title]
-    # @gossip.text = params[:text]
+    @gossip = Gossip.new
+    @gossip.content = params[:content]
+    @gossip.anonymous_author = params[:anonymous_author]
     
     if @gossip.save
     redirect_to @gossip
